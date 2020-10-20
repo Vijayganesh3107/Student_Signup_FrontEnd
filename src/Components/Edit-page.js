@@ -29,7 +29,7 @@ const EditPage=()=>{
     
 
     useEffect(()=>{
-         fetch("http://localhost:5000/get-details/"+id).then(res=>res.json()).then(data=>{
+         fetch("https://student-signup-app-react.herokuapp.com/get-details/"+id).then(res=>res.json()).then(data=>{
             setDatabyid(data);
          })
          
@@ -102,7 +102,7 @@ const EditData=async()=>{
         food,
         color
     }
-     let res=await fetch("http://localhost:5000/edit-details/"+databyid.email,{
+     let res=await fetch("https://student-signup-app-react.herokuapp.com/edit-details/"+databyid.email,{
          method:"PUT",
          body:JSON.stringify(bodydata),
          headers:{
