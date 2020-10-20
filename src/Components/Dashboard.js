@@ -34,9 +34,9 @@ const Dashboard=()=>{
 
     return(
         <>
-        <NavbarHeader></NavbarHeader>
+        <NavbarHeader className="container-fluid"></NavbarHeader>
         <h1 className="text-center">Dashboard</h1>
-        <Table striped className=" container mt-5 dashboard">
+        <Table striped className="table  container mt-5 dashboard">
         <thead>
           <tr>
               <th>Id</th>

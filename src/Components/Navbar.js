@@ -22,7 +22,7 @@ const NavbarHeader = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
+    <div className="container-fluid">
       <Navbar color="light" light expand="md">
         <Link className="navbar-brand" to={routes.home}>Student Signup</Link>
         <NavbarToggler onClick={toggle} />
