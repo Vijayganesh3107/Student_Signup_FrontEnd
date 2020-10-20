@@ -1,0 +1,12 @@
+h1 {
+  color: tomato;
+}
+.dashboard tbody tr {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+}
+
+.dashboard thead th {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+}
