@@ -1,9 +1,8 @@
-import React, { Fragment,useState,useEffect } from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input,Select,Options,Alert } from 'reactstrap';
+import React, {useState,useEffect } from 'react';
+import { Col, Row, Button, Form,Label, Input} from 'reactstrap';
 import {useHistory} from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import routes from "../routes"
-import id from "./Signuppage"
 import NavbarHeader from "./Navbar"
 
 
@@ -16,7 +15,7 @@ const DeletePage=()=>{
     
 
     useEffect(()=>{
-         fetch("https://student-signup-app-react.herokuapp.com/get-details/"+id).then(res=>res.json()).then(data=>{
+         fetch("http://localhost:5000/get-details/"+id).then(res=>res.json()).then(data=>{
             setDatabyid(data);
          })
          
@@ -26,7 +25,7 @@ const DeletePage=()=>{
 
 
 const DeleteAction=async()=>{
-     let res=await fetch("https://student-signup-app-react.herokuapp.com/delete/"+databyid.email,{
+     let res=await fetch("http://localhost:5000/delete/"+databyid.email,{
          method:"DELETE",
          headers:{
             "Content-Type": "application/json"

@@ -1,5 +1,5 @@
-import React, { Fragment,useState,useEffect } from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input,Select,Options,Alert } from 'reactstrap';
+import React, { useState} from 'react';
+import { Col, Row, Button, Form, Label, Input,Alert } from 'reactstrap';
 import {useHistory} from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import routes from "../routes"
@@ -86,7 +86,7 @@ const  PostData= async()=>{
         color
 
     }
-    var req=await fetch("https://student-signup-app-react.herokuapp.com/add-details",{
+    var req=await fetch("http://localhost:5000/add-details",{
         method:"POST",
         body:JSON.stringify(bodydata),
         headers:{

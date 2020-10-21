@@ -4,15 +4,8 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText
+  NavItem
 } from 'reactstrap';
 import routes from '../routes';
 
@@ -22,7 +15,7 @@ const NavbarHeader = (props) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div className="container-fluid">
+    <div>
       <Navbar color="light" light expand="md">
         <Link className="navbar-brand" to={routes.home}>Student Signup</Link>
         <NavbarToggler onClick={toggle} />

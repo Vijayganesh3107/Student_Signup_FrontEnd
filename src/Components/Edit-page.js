@@ -1,9 +1,8 @@
-import React, { Fragment,useState,useEffect } from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input,Select,Options,Alert } from 'reactstrap';
+import React, { useState,useEffect } from 'react';
+import { Col, Row, Button, Form, Label, Input } from 'reactstrap';
 import {useHistory,Link} from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import routes from "../routes"
-import id from "./Signuppage"
 import NavbarHeader from "./Navbar"
 
 const EditPage=()=>{
@@ -29,26 +28,13 @@ const EditPage=()=>{
     
 
     useEffect(()=>{
-         fetch("https://student-signup-app-react.herokuapp.com/get-details/"+id).then(res=>res.json()).then(data=>{
+         fetch("http://localhost:5000/get-details/"+id).then(res=>res.json()).then(data=>{
             setDatabyid(data);
          })
          
         
     },[])
 
-
-
-
-   
-
-
-    // const handleNameChange=(e)=>{
-    //     setName(e.target.value)
-    // }
-
-    // const handleEmailChange=(e)=>{
-    //     setEmail(e.target.value)
-    // }
 
     const handleCountryChange=(e)=>{
         setCountry(e.target.value);
@@ -102,7 +88,7 @@ const EditData=async()=>{
         food,
         color
     }
-     let res=await fetch("https://student-signup-app-react.herokuapp.com/edit-details/"+databyid.email,{
+     let res=await fetch("http://localhost:5000/edit-details/"+databyid.email,{
          method:"PUT",
          body:JSON.stringify(bodydata),
          headers:{

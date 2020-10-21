@@ -1,6 +1,9 @@
-import React, { Fragment,useState,useEffect } from 'react';
-import { Col, Row, Button, Form, FormGroup, Label, Input,Select,Options,Alert,Table } from 'reactstrap';
-import {useHistory,Link} from "react-router-dom"
+import React, {useState,useEffect } from 'react';
+import { Button} from 'reactstrap';
+import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
+
+import {useHistory} from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import routes from "../routes"
 import NavbarHeader from "./Navbar"
@@ -14,7 +17,7 @@ const Dashboard=()=>{
 
 
      useEffect(()=>{
-         fetch("https://student-signup-app-react.herokuapp.com/get-details")
+         fetch("http://localhost:5000/get-details")
          .then(res=>res.json())
          .then(data1=>{
              setDatas(data1);
@@ -34,53 +37,53 @@ const Dashboard=()=>{
 
     return(
         <>
-        <NavbarHeader className="container-fluid"></NavbarHeader>
+        <NavbarHeader></NavbarHeader>
         <h1 className="text-center">Dashboard</h1>
-        <Table striped className="table  container mt-5 dashboard">
-        <thead>
-          <tr>
-              <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Country</th>
-            <th>State</th>
-            <th>City</th>
-            <th>Address Line 1</th>
-            <th>Address Line 2</th>
-            <th>Gender</th>
-            <th>Marital Status</th>
-            <th>Favorite Food</th>
-            <th>Favorite Color</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
+        <Table>
+        <Thead>
+          <Tr>
+              <Th>Id</Th>
+            <Th>Name</Th>
+            <Th>Email</Th>
+            <Th>Country</Th>
+            <Th>State</Th>
+            <Th>City</Th>
+            <Th>Address Line 1</Th>
+            <Th>Address Line 2</Th>
+            <Th>Gender</Th>
+            <Th>Marital Status</Th>
+            <Th>Favorite Food</Th>
+            <Th>Favorite Color</Th>
+            <Th>Edit</Th>
+            <Th>Delete</Th>
+          </Tr>
+        </Thead>
+        <Tbody>
           {datas.map((item,index)=>{
               return(
-                  <tr key={index}>
-                      <td>{index+1}</td>
-                      <td>{item.name}</td>
-                      <td>{item.email}</td>
-                      <td>{item.country}</td>
-                      <td>{item.state}</td>
-                      <td>{item.city}</td>
-                      <td>{item.address1}</td>
-                      <td>{item.address2}</td>
-                      <td>{item.gender}</td>
-                      <td>{item.maritalstatus}</td>
-                      <td>{item.food}</td>
-                      <td>{item.color}</td>
-                      <td>
+                  <Tr key={index}>
+                      <Td>{index+1}</Td>
+                      <Td>{item.name}</Td>
+                      <Td>{item.email}</Td>
+                      <Td>{item.country}</Td>
+                      <Td>{item.state}</Td>
+                      <Td>{item.city}</Td>
+                      <Td>{item.address1}</Td>
+                      <Td>{item.address2}</Td>
+                      <Td>{item.gender}</Td>
+                      <Td>{item.maritalstatus}</Td>
+                      <Td>{item.food}</Td>
+                      <Td>{item.color}</Td>
+                      <Td>
                           <Button color="primary"   onClick={handleEditClick}  id={item.email}>Edit</Button>
-                      </td>
-                      <td>
+                      </Td>
+                      <Td>
                           <Button color="danger" onClick={handleDeleteClick} id={item.email}>Delete</Button>
-                      </td>
-                  </tr>
+                      </Td>
+                  </Tr>
               )
           })}
-        </tbody>
+        </Tbody>
       </Table>
       </>
    
