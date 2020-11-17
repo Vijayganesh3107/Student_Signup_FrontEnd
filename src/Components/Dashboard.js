@@ -17,7 +17,7 @@ const Dashboard=()=>{
 
 
      useEffect(()=>{
-         fetch("http://localhost:5000/get-details")
+         fetch("https://student-signup-app-react.herokuapp.com/get-details")
          .then(res=>res.json())
          .then(data1=>{
              setDatas(data1);

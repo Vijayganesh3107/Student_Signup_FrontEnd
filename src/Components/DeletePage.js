@@ -15,7 +15,7 @@ const DeletePage=()=>{
     
 
     useEffect(()=>{
-         fetch("http://localhost:5000/get-details/"+id).then(res=>res.json()).then(data=>{
+         fetch("https://student-signup-app-react.herokuapp.com/get-details/"+id).then(res=>res.json()).then(data=>{
             setDatabyid(data);
          })
          
@@ -25,7 +25,7 @@ const DeletePage=()=>{
 
 
 const DeleteAction=async()=>{
-     let res=await fetch("http://localhost:5000/delete/"+databyid.email,{
+     let res=await fetch("https://student-signup-app-react.herokuapp.com/delete/"+databyid.email,{
          method:"DELETE",
          headers:{
             "Content-Type": "application/json"

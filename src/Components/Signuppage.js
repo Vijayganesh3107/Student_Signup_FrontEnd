@@ -86,7 +86,7 @@ const  PostData= async()=>{
         color
 
     }
-    var req=await fetch("http://localhost:5000/add-details",{
+    var req=await fetch("https://student-signup-app-react.herokuapp.com/add-details",{
         method:"POST",
         body:JSON.stringify(bodydata),
         headers:{
